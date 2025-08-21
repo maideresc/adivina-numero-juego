@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego Adivina el Número</title>
+
+  #Brython 
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"></script>
+
+  #Styling
+  <style>
+    body {
+      font-family: 'Fira Code', monospace;
+      background-color: #1e1e1e;
+      color: #c5c5c5;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #569cd6;
+      margin-bottom: 1rem;
+    }
+
+    .vscode-box {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    #output {
+      background-color: #1e1e1e;
+      color: #00ff00;
+      border: 1px solid #333;
+      padding: 10px;
+      border-radius: 5px;
+      min-height: 150px;
+      white-space: pre-line;
+      margin-bottom: 1rem;
+      overflow-y: auto;
+    }
+
+    input[type="text"] {
+      width: calc(100% - 100px);
+      padding: 0.5rem;
+      background-color: #252526;
+      border: 1px solid #333;
+      border-radius: 5px;
+      color: #c5c5c5;
+      font-family: 'Fira Code', monospace;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      background-color: #0e639c;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1177bb;
+    }
+
+    .input-group {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body onload="brython()">
+
+  <h1>Adivina el Número</h1>
+
+  <div class="vscode-box">
+    <div id="output"></div>
+    <div class="input-group">
+      <input id="entrada" type="text" placeholder="Escribe aquí...">
+      <button id="btn">Enviar</button>
+    </div>
+  </div>
+
+  <script type="text/python" src="game.py"></script>
+
+</body>
+</html>
+

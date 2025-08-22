@@ -7,7 +7,7 @@ entrada = document["entrada"]
 boton = document["btn"]
 
 def print_linea(texto):
-    output.text += str(texto) + "\n"
+    output.text += str(texto) + "\n" #lo siguiente aparece en la siguiente línea
 
 # Variables 
 MINIMO = 1
@@ -16,10 +16,10 @@ numero_azar = None
 intentos = 0
 estado = "inicio"
 
-def manejar_entrada(ev):
+def manejar_entrada(evento):
     global maximo, numero_azar, intentos, estado
     texto = entrada.value.strip()
-    entrada.value = ""
+    entrada.value = "" #borra lo que había escrito el usuario en el cuadro de texto después de leerlo
 
     if not texto:
         return
@@ -55,12 +55,13 @@ def manejar_entrada(ev):
         elif usuario_num < numero_azar:
             print_linea("El número es más grande")
         else:
-            print_linea(f"¡Has acertado! El número era {numero_azar}")
+            print_linea(f"¡Felicidades, has acertado! El número era {numero_azar}")
             print_linea(f"Intentos: {intentos}")
             estado = "fin"
 
 # Interacciones
+# Cada vez que pulses el botón, tu juego leerá lo que escribiste en la entrada de texto y lo procesará
 boton.bind("click", manejar_entrada)
-entrada.bind("keypress", lambda e: manejar_entrada(e) if e.keyCode == 13 else None)
 
 print_linea("Elige la dificultad [F, M, D]:")
+
